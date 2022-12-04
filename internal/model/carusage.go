@@ -41,7 +41,7 @@ func (cu *CarUsage) BookCar() (int64, error) {
 		return 0, err
 	}
 
-	err = car.BookCar()
+	err = car.bookCar()
 	if err != nil {
 		dbTX.Rollback()
 		log.Println("carusgae.BookCar(): ", err)
@@ -74,7 +74,7 @@ func (cu *CarUsage) ReturnCar(billno int64) error {
 		return err
 	}
 
-	err = car.ReturnCar()
+	err = car.returnCar()
 	if err != nil {
 		dbTX.Rollback()
 		log.Println("carusgaes.ReturnCar(): ", err)

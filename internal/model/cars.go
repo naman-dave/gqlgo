@@ -44,7 +44,7 @@ func (c *Car) Insert() (string, error) {
 	return c.CarIdentifier, nil
 }
 
-func (c *Car) BookCar() error {
+func (c *Car) bookCar() error {
 	updateSQL := `
 	    UPDATE Cars
         SET
@@ -61,7 +61,7 @@ func (c *Car) BookCar() error {
 	return nil
 }
 
-func (c *Car) ReturnCar() error {
+func (c *Car) returnCar() error {
 	updateSQL := `
 	    UPDATE Cars
         SET

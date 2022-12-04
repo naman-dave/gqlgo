@@ -1,0 +1,58 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type User {
+  id: ID!
+  firstname: String!
+  lastname: String!
+  mobilenumber: String!
+  passkey: String!
+}
+
+type Car {
+  id: ID!
+  modal: String!
+  caridentifier: String!
+  dateofmanufacture: String!
+  totalcar: Int!
+  totalinuse: Int!
+}
+
+type Query {
+  cars: [Car]!
+}
+
+input NewUser {
+  firstname: String!
+  lastname: String!
+  mobilenumber: String!
+  password: String!
+}
+
+input Login {
+  mobilenumber: String!
+  password: String!
+}
+
+input NewCar {
+  modal: String!
+  dateofmanufacture: String!
+  caridentifier: String!
+  totalcar: Int!
+  totalinuse: Int!
+}
+
+input ProcessCar {
+  caridentifier: String!
+  bookedtill: String!
+}
+
+type Mutation {
+  createUser(input: NewUser!): String!
+  login(input: Login!): String!
+  addCar(input: NewCar!): String!
+  bookCar(input: ProcessCar!) : String!
+  returnCar(input: Int!): String!
+  logout: String!
+}

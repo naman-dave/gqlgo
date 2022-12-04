@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS CarUsages (
+    ID SERIAL PRIMARY KEY,
+    CarUnidueID VARCHAR (127) NOT NULL REFERENCES Cars(CarIdentifier),
+    UserID INT NOT NULL REFERENCES Users(ID),
+    BookedTill DATE NOT NULL,
+    ReturnDate DATE NULL
+)
